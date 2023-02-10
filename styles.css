@@ -1,0 +1,133 @@
+body {
+  display: block;
+  max-width: 100%;
+  margin:0;
+}
+
+
+.container {  display: grid;
+  grid-template-columns: 0.4fr 1.7fr;
+  grid-template-rows: 1.9fr 0.1fr;
+  gap: 2em;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "NAV CONTENT"
+    "NAV FOOTER";
+}
+
+.NAV { grid-area: NAV;
+ max-width: 250px !important;
+ 
+
+}
+
+.CONTENT {
+  justify-self: start;
+  grid-area: CONTENT;
+  
+}
+
+
+.FOOTER { grid-area: FOOTER; }
+
+
+.nbh {    
+  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-size: 1em;
+  text-align: center;
+  color: azure;
+  text-shadow: #4e4b5e;
+  padding-bottom: 10px;
+}
+
+.nbc {
+  display:inline;
+  column-width: 80%;    
+ /*  width: 200px; */
+  height: 100%;
+  background: #4e4b5e;
+ /*  padding: 10px 0px; */
+  position: fixed;
+  z-index:10;
+  border-right:4px solid #d9d7e2;
+}
+
+nav li {       
+  padding:10px 10px;
+  list-style: none;
+  border-top:4px solid #d9d7e2;
+  text-align: justify;
+  
+} 
+
+nav a {
+  font-family:'Times New Roman', Times, serif;
+  font-weight:lighter;
+  text-decoration: none;
+  color: azure;
+}
+
+.mdoc {
+  display: grid;
+  grid-area: CONTENT;
+  margin-left: 5rem;
+ /*  margin-right: 25ch; */
+  width:70%;
+  height: 80%; 
+  position: relative;   
+  z-index:9;
+ /*  overflow: hidden; */
+  justify-self:self-start;
+  padding-left: 5rem;
+}
+
+.mdoc section {
+  margin:10% 0;
+  padding:10px;
+  text-align:justify;
+}
+
+.mdoc header {
+  font-weight: bolder;
+}
+
+footer {
+  display: block;
+  max-width: 100%;
+  margin-left: 25ch;
+  margin-right: 25ch;
+ 
+  text-align: center;
+  position:relative;
+}
+
+.footer-box {
+  display:flex;
+  width:100%;   
+  /* padding:5px 15px; */
+  background-color:rgba(32, 24, 39, 0.8);
+  position: relative;    
+}
+.footer-box a {
+  color: springgreen;
+  text-decoration: none;
+}
+
+.footer-box h4 {
+  color: azure;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media (max-width: 600px) {
+  .container {
+      display: grid;
+      width: min-content;
+      margin: 0 auto;
+      grid-column-gap: 1em;
+      grid-template-areas: 
+      "NAV CONTENT"
+      "NAV FOOTER";
+      grid-template-columns: min-content max-content;
+  }
+}
